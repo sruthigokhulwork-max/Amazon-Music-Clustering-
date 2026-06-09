@@ -86,6 +86,7 @@ plt.show()
 # The best K is where silhouette score is highest.
 # from this we understand that highest score is at K=3, drops sharply at K=4 and K=5, 
 # then becomes flat and low from K=6 onwards.
+# Silhouette Score = 0.1669 
 
 # even though k=3 has the highest score, having only 3 clusters for our dataset makes it too broad, its not useful.
 # k=4 - 2nd best and is nearer to the elbow, having extra cluster is useful
@@ -96,7 +97,7 @@ plt.show()
 # Step 4: applying the best K
 
 # After looking at your elbow and silhouette plots, choose K
-# We'll use K=6 as a starting point — adjust based on your plots
+# We'll use K=4 as a starting point — adjust based on your plots
 best_k = 4
 
 kmeans_final = KMeans(n_clusters=best_k, random_state=42, n_init=10)
@@ -123,6 +124,8 @@ print(f"Inertia            : {kmeans_final.inertia_:.0f}")
 
 # davies-bouldin index measures the average similarity between each cluster and its most similar other cluster. Lower is better. 
 # 0 means perfect separation. Typical good values are below 1.0.
+
+# result - Davies-Bouldin Index - 1.8906.
 
 
 # Step 6: colouring the role by cluster:
@@ -178,3 +181,6 @@ print(f"K-Means K=4 Silhouette : 0.1669")
 print("Conclusion: K-Means chosen as final model")
 print("Reason: DBSCAN struggles with high-dimensional")
 print("uniform density data like audio features.")
+
+# DBSCAN found : 63 clusters
+# # Noise points : 6791 (7.1%)

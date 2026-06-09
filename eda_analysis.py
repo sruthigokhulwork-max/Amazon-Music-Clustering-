@@ -16,7 +16,8 @@ import seaborn as sns
 import os
 
 os.makedirs("outputs", exist_ok=True) 
-# This line creates a directory "outputs" where we can save our results, such as plots and analysis outputs. The exist_ok=True parameter ensures that if the directory already exists, it won't raise an error. This is useful for organizing our results and keeping our workspace tidy.
+# This line creates a directory "outputs" where we can save our results, such as plots and analysis outputs.
+#  The exist_ok=True parameter ensures that if the directory already exists, it won't raise an error. 
 
 # Step 2: Load the dataset
 
@@ -127,6 +128,9 @@ plt.show()
 # This is a heatmap of the correlation matrix for the audio features.
 # The colors indicate the strength and direction of the correlations, 
 # with red representing positive correlations and blue representing negative correlations. 
+# energy and loudness = 0.73
+# valence and tempo = 0.08 (independent)
+# acousticness and energy = -0.66 (strongly negative correlation)
 
 # Step 3.8: Boxplots for outlier detection
 
@@ -161,6 +165,8 @@ for col in audio_features:
     print(f"{col} → {outliers} outliers ({percentage}%)")
 
 # From the boxplots and the outlier counts, we can identify which features have a significant number of outliers.
+# speechiness = 17.9% outliers 
+# instrumentalness = 22% outliers.
 
 
 # Step 4: Data saving

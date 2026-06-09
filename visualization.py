@@ -181,3 +181,20 @@ df.to_csv("outputs/final_clustered_songs.csv", index=False)
 print("Saved: outputs/final_clustered_songs.csv")
 print(f"Total songs: {len(df):,}")
 print("Columns:", df.columns.tolist())
+
+# cluster results:
+# Cluster 0 — Calm Acoustic Songs (29,239 songs — 30.5%)
+# High acousticness (0.70), low energy (0.34), quiet (-12.1 dB).
+# Folk, classical, and soft acoustic tracks.
+
+# Cluster 1 — High Energy Mainstream (46,448 songs — 48.5%)
+# Highest energy (0.71), loudest (-7.43 dB), happiest (valence 0.68).
+# Pop, rock, and electronic mainstream music.
+
+# Cluster 2 — Speech Heavy & Live (12,335 songs — 12.9%)
+# Speechiness 0.84 — 14x higher than other clusters.
+# Shortest songs (97,081ms avg). Rap, spoken word, live recordings.
+
+# Cluster 3 — Pure Instrumental (7,815 songs — 8.2%)
+# Instrumentalness 0.81 — almost no vocals whatsoever.
+# Classical, ambient, film scores, jazz instrumentals.

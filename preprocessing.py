@@ -103,8 +103,8 @@ plt.show()
 
 # Step 6.2: applying 2d 
 # here it reduces the dataset to two principal components to create a 2D visual representation.
-# pc1 - loudness
-# pc2 = danceability
+# pc1 — primarily driven by energy, loudness, acousticness
+# pc2 — primarily driven by speechiness, danceability
 
 pca_2d = PCA(n_components=2, random_state=42)
 x_pca_2d = pca_2d.fit_transform(x_scaled)
